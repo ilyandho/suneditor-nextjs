@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-import SunEditor from 'suneditor-react';
+import SunEditor, { buttonList } from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
 
 export default function Home() {
@@ -16,7 +16,10 @@ export default function Home() {
       <main className={styles.main}>
         <h3>My Editor</h3>
 
-        <SunEditor />
+        <SunEditor setOptions={{
+          height: 200,
+          buttonList: buttonList.complex
+        }} lang="en" name="my-editor" placeholder="Start typing here ..." autoFocus={true} />
       </main>
 
       <footer className={styles.footer}>
