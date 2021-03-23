@@ -6,6 +6,16 @@ import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
 
 export default function Home() {
 
+  const handleChange = (contents) => {
+    console.log(contents)
+  }
+  const handleScroll = (contents) => {
+    console.log('scrolling...')
+  }
+
+  const handleClick = event => {
+    console.log(event)
+  }
   return (
     <div className={styles.container}>
       <Head>
@@ -24,9 +34,14 @@ export default function Home() {
           // enable={true}
           // disable={true}
           // hide={true}
-          show={true}
-        // showToolbar={false}
-        // enableToolbar={false}
+          // show={true} //default
+          // showToolbar={false}
+          // enableToolbar={false}
+
+          onChange={e => handleChange(e)}
+          onScroll={e => handleScroll(e)}
+          onClick={e => handleClick(e)} // On clicking inside the editor not the toolbar or outside
+
         />
       </main>
 
