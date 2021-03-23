@@ -16,10 +16,18 @@ export default function Home() {
       <main className={styles.main}>
         <h3>My Editor</h3>
 
-        <SunEditor setOptions={{
-          height: 200,
-          buttonList: buttonList.complex
-        }} lang="en" name="my-editor" placeholder="Start typing here ..." autoFocus={true} />
+        <SunEditor
+          setOptions={{
+            height: 200,
+            buttonList: buttonList.complex
+          }} lang="en" name="my-editor" placeholder="Start typing here ..." autoFocus={true} setContents="My contents"
+          // enable={true}
+          // disable={true}
+          // hide={true}
+          show={true}
+        // showToolbar={false}
+        // enableToolbar={false}
+        />
       </main>
 
       <footer className={styles.footer}>
