@@ -3,11 +3,13 @@ import styles from "../styles/Home.module.css";
 
 import SunEditor, { buttonList } from 'suneditor-react';
 import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
+import { useState } from "react";
 
 export default function Home() {
+  const [displayContent, setDisplayContent] = useState('<h2>Content will go here</h2>')
 
   const handleChange = (contents) => {
-    console.log(contents)
+    setDisplayContent(contents)
   }
   const handleScroll = (contents) => {
     console.log('scrolling...')
@@ -25,6 +27,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <h3>My Editor</h3>
+        <div>
+          <div dangerouslySetInnerHTML={{ __html: displayContent }}></div>
+        </div>
 
         <SunEditor
           setOptions={{
